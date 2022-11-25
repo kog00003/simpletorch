@@ -152,6 +152,17 @@ def mean(x):
     return x.sum()/len(x)
 
 
+def testingWithCrossEntropyLoss(model, xTest, yTest):
+    """
+    return {'loss': 0.025, 'probTrue': 1.0, 'avgScore': 0.97}"""
+    with torch.no_grad():
+        out = model(xTest)
+        loss = nn.CrossEntropyLoss()(out, yTest)
+        a = nn.functional.softmax(out, dim=1).max(dim=1)
+        probRight = mean(a[1] == yTest)
+        meanScore = mean(a[0])
+        return dict(loss=loss.item(), probTrue=probRight.item(), avgScore=meanScore.item())
+    
 def intToIndicatorVector(x, lengthVector):
     """if int feature work like category you should use it
     3 -> (0,0,0,1,0,0)
