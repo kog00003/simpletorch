@@ -3,8 +3,8 @@
 simple pytorch function, let you train/save/use model for data with one line
 
 
-
-x,y : your data/label
+```python
+#x,y : your data/label
 
 #split for train/test with 9/1 ratio
 xTrain, yTrain, xTest, yTest = chooseTrainTest(x, y, trainPercent=.9)
@@ -24,3 +24,4 @@ losses = trainingWithCrossEntropyLoss(myModel,
                                       
  #plot losses
  #plot(losses)
+```
