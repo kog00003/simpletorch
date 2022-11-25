@@ -1,6 +1,6 @@
 # simpletorch
 
-simple pytorch function, let you train/save/use model for data with one line
+simple pytorch function, let you train/save/load/use model for data with ease
 
 
 ```python
@@ -32,4 +32,15 @@ losses = trainingWithCrossEntropyLoss(myModel,
 testResult=testingWithCrossEntropyLoss(myModel, xTest, yTest)
 #{'loss': 0.025181233882904053, 'probTrue': 1.0, 'avgScore': 0.9756311774253845}
 print(testResult)
+
+
+# save model
+saveModel(myModel, 'mymodel.pt')
+
+# load model
+loadModel(myModel, 'mymodel.pt')
+
+# use model
+predict(myModel, new_x)
+
 ```
