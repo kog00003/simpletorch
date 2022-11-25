@@ -25,6 +25,11 @@ losses = trainingWithCrossEntropyLoss(myModel,
                                       batchSize=1024)
                                       
                                       
- #plot losses
+ #plotting
  #plot(losses)
+ 
+ #testing
+testResult=testingWithCrossEntropyLoss(myModel, xTest, yTest)
+#{'loss': 0.025181233882904053, 'probTrue': 1.0, 'avgScore': 0.9756311774253845}
+print(testResult)
 ```
